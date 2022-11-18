@@ -9,4 +9,3 @@ function getRelatedEmployees(managerId) {
 }
 
 module.exports = { isManager, getRelatedEmployees };
-
