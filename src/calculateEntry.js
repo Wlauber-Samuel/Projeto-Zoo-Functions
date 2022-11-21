@@ -15,19 +15,19 @@ function countEntrants(entrants) {
       senior += 1;
     }
   }
-  return { child: child, adult: adult, senior: senior};
+  return { child: child, adult: adult, senior: senior };
 }
 function calculateEntry(entrants) {
-  if (entrants === {})
+  if (entrants === {}) {
     return 0;
-  else if (entrants === undefined) {
+  } else if (entrants === undefined) {
     return 0;
   }
 
-  let total = countEntrants(entrants);
-  let priceChild = 20.99;
-  let priceAdult = 49.99;
-  let priceSenior = 24.99;
+  const total = countEntrants(entrants);
+  const priceChild = 20.99;
+  const priceAdult = 49.99;
+  const priceSenior = 24.99;
 
   total.child = total.child * priceChild;
   total.adult = total.adult * priceAdult;
@@ -37,12 +37,3 @@ function calculateEntry(entrants) {
 }
 
 module.exports = { calculateEntry, countEntrants };
-
-console.log(calculateEntry([
-  { name: 'Lara Carvalho', age: 5 },
-  { name: 'Frederico Moreira', age: 5 },
-  { name: 'Pedro Henrique Carvalho', age: 5 },
-  { name: 'Maria Costa', age: 18 },
-  { name: 'Núbia Souza', age: 18 },
-  { name: 'Carlos Nogueira', age: 50 },
-]));
