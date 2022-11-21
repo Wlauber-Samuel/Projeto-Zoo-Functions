@@ -13,7 +13,7 @@ describe('Testes da função HandlerElephants', () => {
     expect(Object.values(received).includes('Jefferson')).toEqual(true);
   });
 
-    it('Retorna a média de idade dos elefantes quando é passado "averageAge" como parâmetro', () => {
+  it('Retorna a média de idade dos elefantes quando é passado "averageAge" como parâmetro', () => {
     const received = handlerElephants('averageAge');
     const expected = 10.5;
     expect(received).toBe(expected);
