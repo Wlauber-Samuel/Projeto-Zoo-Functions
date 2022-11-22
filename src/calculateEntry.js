@@ -18,9 +18,7 @@ function countEntrants(entrants) {
   return { child: child, adult: adult, senior: senior };
 }
 function calculateEntry(entrants) {
-  if (entrants === {}) {
-    return 0;
-  } else if (entrants === undefined) {
+  if (entrants === {} || entrants === undefined) {
     return 0;
   }
 

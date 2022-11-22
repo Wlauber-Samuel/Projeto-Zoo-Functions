@@ -26,10 +26,4 @@ describe('Testes da função getOpeningHours', () => {
         expect(() => getOpeningHours('Friday',formatInValid)).toThrow('The hour should represent a number')
     });
 
-    it('Verifica se a função não faz diferenciação entre maiúsculas e minúsculas', () => {
-       const NotCaseSensitive = 'tuesday, 09:00-AM'
-       expect(() => getOpeningHours('Tuesday, 09:00-AM')).toThrow('The zoo is open')
-    });
-
-
 });
