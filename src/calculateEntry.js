@@ -27,9 +27,9 @@ function calculateEntry(entrants) {
   const priceAdult = 49.99;
   const priceSenior = 24.99;
 
-  total.child = total.child * priceChild;
-  total.adult = total.adult * priceAdult;
-  total.senior = total.senior * priceSenior;
+  total.child *= priceChild;
+  total.adult *= priceAdult;
+  total.senior *= priceSenior;
 
   return total.child + total.adult + total.senior;
 }
