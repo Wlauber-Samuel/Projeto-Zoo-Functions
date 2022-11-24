@@ -14,6 +14,7 @@ function calculateEntry(entrants) {
   const peoples = countEntrants(entrants);
   const { child, adult, senior } = peoples;
 
+  let amount = 0;
   amount = child * data.prices.child + adult * data.prices.adult + senior * data.prices.senior;
   return amount;
 }
