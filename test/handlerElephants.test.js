@@ -29,12 +29,12 @@ describe('Testes da função HandlerElephants', () => {
   it('Retorna "null" quando o parâmetro for diferente de "count, names, averageAge"', () => {
     const received = handlerElephants('abc');
     expect(received).toEqual(null);
-  }); 
+  });
 
   it('Retorna "undefined" quando não é passado nenhum parâmetro', () => {
     const received = handlerElephants();
     expect(received).toEqual(undefined);
-  }); 
+  });
 
   it('Retorna "Parâmetro inválido, é necessário uma string" quando é passado um parâmetro diferente de string', () => {
     const received = handlerElephants(25);

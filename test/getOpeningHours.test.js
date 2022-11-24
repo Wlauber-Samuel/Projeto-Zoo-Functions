@@ -18,11 +18,11 @@ describe('Testes da função getOpeningHours', () => {
 
   it('Verifica se o zoològico está aberto ou fechado', () => {
     const validDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-	  expect(getOpeningHours('Wednesday', '09:00-PM', validDays)).toBe('The zoo is closed');
+    expect(getOpeningHours('Wednesday', '09:00-PM', validDays)).toBe('The zoo is closed');
   });
 
   it('Verifica se a formatação do horário passado está correta', () => {
-	  const formatInValid = 'quarta, 09:aa-PM';
-	  expect(() => getOpeningHours('Friday', formatInValid)).toThrow('The hour should represent a number');
+    const formatInValid = 'quarta, 09:aa-PM';
+    expect(() => getOpeningHours('Friday', formatInValid)).toThrow('The hour should represent a number');
   });
 });
