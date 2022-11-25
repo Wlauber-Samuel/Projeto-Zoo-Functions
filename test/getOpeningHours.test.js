@@ -1,6 +1,17 @@
+const data = require('../data/zoo_data');
 const getOpeningHours = require('../src/getOpeningHours');
 
+
 describe('Testes da função getOpeningHours', () => {
+
+  it('Verifica se getOpeningHours é uma função', () => {
+    expect(typeof getOpeningHours).toBe('function');
+  });
+
+  it('Verifica retorno da função quando não é passado nenhum parâmetro', () => {
+    expect(getOpeningHours()).toEqual(data.hours)
+  });
+
   it('Verifica se o dia passado é um dia válido', () => {
     const validDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     expect(() => getOpeningHours('Segunda', validDays)).toThrow('The day must be valid. Example: Monday');
@@ -40,5 +51,9 @@ describe('Testes da função getOpeningHours', () => {
 
   it('Verifica se a função lança uma exceção com a mensagem: "The hour should represent a number" quando passados Tuesday e 09:60-AM como argumentos', () => {
     expect(() => getOpeningHours('Tuesday', '09:60-AM')).toThrow('The minutes must be between 0 and 59');
+  });
+
+  it('Verfica se a função retorna um erro se for passado um período diferente de "AM ou PM"', () => {
+    expect(() => getOpeningHours('Saturday', '11:30-HM')).toThrow('The abbreviation must be \'AM\' or \'PM\'');
   });
 });
