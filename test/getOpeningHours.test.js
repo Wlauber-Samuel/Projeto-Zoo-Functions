@@ -41,4 +41,8 @@ describe('Testes da função getOpeningHours', () => {
   it('Verifica se a função lança uma exceção com a mensagem: "The hour should represent a number" quando passados Tuesday e 09:60-AM como argumentos', () => {
     expect(() => getOpeningHours('Tuesday', '09:60-AM')).toThrow('The minutes must be between 0 and 59');
   });
+
+  it('Verifica se o argumento da hora está correto, caso contrário retorna um erro', () => {
+    expect(getOpeningHours('Wednesday', 'k9:00-PM')).toThrow('The hour should represent a number');
+  });
 });
