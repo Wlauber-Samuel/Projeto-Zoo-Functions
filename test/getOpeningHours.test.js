@@ -25,4 +25,21 @@ describe('Testes da função getOpeningHours', () => {
     const formatInValid = 'quarta, 09:aa-PM';
     expect(() => getOpeningHours('Friday', formatInValid)).toThrow('The hour should represent a number');
   });
+
+  it('Verifica se a função lança uma exceção com a mensagem: "The hour should represent a number" quando passados Saturday e C9:00-AM como argumentos', () => {
+    expect(() => getOpeningHours('Saturday', 'C9:00-AM')).toThrow('The hour should represent a number');
+  });
+
+  it('Verifica se a função lança uma exceção com a mensagem: "The hour should represent a number" quando passados Sunday e 09:c0-AM como argumentos', () => {
+    expect(() => getOpeningHours('Sunday', '09:c0-AM')).toThrow('The minutes should represent a number');
+  });
+
+  it('Verifica se a função lança uma exceção com a mensagem: "The hour should represent a number" quando passados Monday e 13:00-AM como argumentos', () => {
+    expect(() => getOpeningHours('Monday', '13:00-AM')).toThrow('The hour must be between 0 and 12');
+  });
+
+  it('Verifica se a função lança uma exceção com a mensagem: "The hour should represent a number" quando passados Tuesday e 09:60-AM como argumentos', () => {
+    expect(() => getOpeningHours('Tuesday', '09:60-AM')).toThrow('The minutes must be between 0 and 59');
+  });
+
 });
