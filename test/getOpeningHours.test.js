@@ -1,15 +1,13 @@
 const data = require('../data/zoo_data');
 const getOpeningHours = require('../src/getOpeningHours');
 
-
 describe('Testes da função getOpeningHours', () => {
-
   it('Verifica se getOpeningHours é uma função', () => {
     expect(typeof getOpeningHours).toBe('function');
   });
 
   it('Verifica retorno da função quando não é passado nenhum parâmetro', () => {
-    expect(getOpeningHours()).toEqual(data.hours)
+    expect(getOpeningHours()).toEqual(data.hours);
   });
 
   it('Verifica se o dia passado é um dia válido', () => {
